@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    
+    /* TARGET & ENVIRONMENT - Für moderne Browser */
+    "target": "ES2020",                    // JavaScript Version (ES2020 = gut unterstützt)
+    "useDefineForClassFields": true,       // Moderne Class-Syntax
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // Browser APIs + moderne JS Features
+    "module": "ESNext",                    // Neueste ES Module Syntax
+    "skipLibCheck": true,                  // Externe Library Type-Checks überspringen (Performance)
+
+    /* BUNDLER MODE - Für Vite */
+    "moduleResolution": "bundler",         // Vite-spezifische Module-Auflösung
+    "allowImportingTsExtensions": true,    // .ts/.tsx Imports erlauben
+    "verbatimModuleSyntax": true,          // Präzise Import/Export Syntax
+    "moduleDetection": "force",            // Alle .ts Dateien als Module behandeln
+    "noEmit": true,                        // Vite übernimmt das Builden
+    "jsx": "react-jsx",                    // React 17+ JSX Transform (automatische React Imports)
+
+    /* AZURE B2C PROJECT SPECIFIC */
+    "resolveJsonModule": true,             // JSON Imports für Config-Dateien
+    "allowSyntheticDefaultImports": true,  // Bessere Kompatibilität mit Axios, etc.
+    "forceConsistentCasingInFileNames": true, // Konsistente Dateinamen (Windows/Mac/Linux)
+    
+    /* TYPE SAFETY - Streng für sichere Auth-Logik */
+    "strict": true,                        // Alle strict Checks aktivieren
+    "noImplicitAny": true,                 // Kein 'any' ohne explizite Angabe
+    "strictNullChecks": true,              // null/undefined Checks (wichtig für User-Daten)
+    "strictFunctionTypes": true,           // Sichere Function Parameter
+    "noImplicitReturns": true,             // Alle Code-Pfade müssen return haben
+    "noFallthroughCasesInSwitch": true,    // Kein vergessenes 'break' in switch
+    
+    /* CODE QUALITY */
+    "noUnusedLocals": true,                // Ungenutzte Variablen warnen
+    "noUnusedParameters": true,            // Ungenutzte Parameter warnen
+    "noUncheckedSideEffectImports": true   // Sichere Side-Effect Imports
+  },
+  "include": [
+    "src/**/*",        // Alle Dateien im src Ordner
+    "src/**/*.ts",     // TypeScript Dateien
+    "src/**/*.tsx",    // React TypeScript Dateien
+    "src/**/*.json"    // JSON Config-Dateien
+  ],
+  "exclude": [
+    "node_modules",    // Dependencies ausschließen
+    "dist",           // Build-Output ausschließen
+    "**/*.test.*",    // Test-Dateien ausschließen (falls vorhanden)
+    "**/*.spec.*"     // Spec-Dateien ausschließen
+  ]
+}

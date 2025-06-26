@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    
+    /* NODE.JS ENVIRONMENT - Für Vite Build Tools */
+    "target": "ES2022",                    // Node.js 16+ unterstützt ES2022
+    "lib": ["ES2022"],                     // Node.js APIs (kein DOM!)
+    "module": "ESNext",                    // ES Modules für moderne Node.js
+    "skipLibCheck": true,                  // Performance bei großen Dependencies
+    "forceConsistentCasingInFileNames": true, // Cross-platform Kompatibilität
+
+    /* BUNDLER MODE - Vite spezifisch */
+    "moduleResolution": "bundler",         // Für Vite Build-Tools
+    "allowImportingTsExtensions": true,    // .ts Imports in Config-Dateien
+    "verbatimModuleSyntax": true,          // Exakte Import/Export Syntax
+    "moduleDetection": "force",            // Alle .ts als Module behandeln
+    "noEmit": true,                        // Vite kompiliert, TypeScript nur für Checking
+
+    /* BUILD TOOLS SPECIFIC */
+    "allowSyntheticDefaultImports": true,  // CommonJS Kompatibilität für Vite Plugins
+    "esModuleInterop": true,              // Bessere Interop zwischen ES/CommonJS
+    "resolveJsonModule": true,            // JSON Konfigurationsdateien importieren
+
+    /* TYPE SAFETY - Auch für Build-Scripts wichtig */
+    "strict": true,                        // Strenge Type-Checks
+    "noUnusedLocals": true,                // Ungenutzte Variablen in vite.config.ts
+    "noUnusedParameters": true,            // Ungenutzte Parameter warnen
+    "noFallthroughCasesInSwitch": true,    // Switch-Statement Sicherheit
+    "noUncheckedSideEffectImports": true   // Sichere Side-Effect Imports
+  },
+  "include": [
+    "vite.config.ts",     // Vite Konfigurationsdatei
+    "vite.config.*.ts",   // Erweiterte Vite Configs (dev, prod, etc.)
+    "vitest.config.ts"    // Falls Sie später Tests hinzufügen
+  ]
+}

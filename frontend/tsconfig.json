@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },    // React App Konfiguration
+    { "path": "./tsconfig.node.json" }   // Vite Build Tools Konfiguration
+  ]
+}

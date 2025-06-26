@@ -1,0 +1,56 @@
+🏆 AZURE B2C AUTHENTICATION - ULTIMATE GUIDE
+================================================
+
+
+🔄 DETAILLIERTER AUTH-FLOW
+==========================
+
+
+
+👤 USER         🌐 FRONTEND      🖥️ BACKEND       ☁️ AZURE B2C     💾 DATABASE
+  │                │                │                │                │
+  │ 1. Login Click │                │                │                │
+  │ ─────────────► │                │                │                │
+  │                │ 2. GET /auth/login              │                │
+  │                │ ─────────────► │                │                │
+  │                │                │ 3. Redirect    │                │
+  │                │                │ ─────────────► │                │
+  │                │ 4. Browser redirect zu B2C      │                │
+  │                │ ◄────────────────────────────── │                │
+  │                                                  │                │
+  │ 5. Login (Email/Password)                        │                │
+  │ ──────────────────────────────────────────────►  │                │
+  │                                                  │                │
+  │                │                │ 6. Auth Code   │                │
+  │                │                │ ◄────────────  │                │
+  │                │ 7. GET /auth/callback?code=xyz  │                │
+  │                │ ─────────────► │                │                │
+  │                │                │ 8. Code→Token  │                │
+  │                │                │ ─────────────► │                │
+  │                │                │ 9. JWT+Claims  │                │
+  │                │                │ ◄────────────  │                │
+  │                │                │ 10a. User in DB suchen          │
+  │                │                │ ──────────────────────────────► │
+  │                │                │ 10b. User EXISTS? ────────────  │
+  │                │                │ ◄────────────────────────────── │
+  │                │                │                                 │
+  │                │                │ 11a. WENN NEUER USER:           │
+  │                │                │      User in DB erstellen ──►   │
+  │                │                │      Mit Azure B2C Claims ──►   │
+  │                │                │      Default Role zuweisen ─►   │ 
+  │                │                │ ◄────────────────────────────── │
+  │                │                │                                 │
+  │                │                │ 11b. WENN BESTEHENDER USER:     │
+  │                │                │      User-Daten aktualisieren   │
+  │                │                │      Last Login updaten ────►   │
+  │                │                │      Claims synchronisieren ─►  │
+  │                │                │ ◄────────────────────────────── │
+  │                │                │                                 │
+  │                │                │ 12. Session erstellen           │
+  │                │                │     + httpOnly Cookie           │
+  │                │                │     + User-ID aus DB            │
+  │                │ 13. Redirect /dashboard         │                │
+  │                │ ◄────────────  │                │                │
+  │ 14. Dashboard  │                │                │                │
+  │ ◄───────────── │                │                │                │
+
