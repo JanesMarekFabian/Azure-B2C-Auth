@@ -170,6 +170,12 @@ This project was built with a focus on:
 - **Maintainability**: 3-tier architecture with TypeScript
 - **User Experience**: Modern React components with responsive design
 
+Its my First serious web development project and I learned a lot from it 
+
+AI will rule the world one day thats the main lesson this project gave me .... im sure! 
+I could never created it so fast without the "help" of AI
+
+
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -184,4 +190,8 @@ This project is for educational/demonstration purposes.
 
 ---
 
-**Built with ❤️ and lots of coffee** ☕ 
+**Built with ❤️ and lots of RedBull ** xDD 
+
+
+
+sorry for not cleaning unused stuff in the database.yml feel free to utilize or clean by urself :D
