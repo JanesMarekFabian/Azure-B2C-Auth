@@ -75,12 +75,7 @@ npm install
 
 ### 2. Environment Setup
 ```bash
-# Copy environment templates
-cp backend/env.txt backend/.env
-cp datenbank/.env.example datenbank/.env
-
-# Configure your Azure B2C settings in backend/.env
-# Configure database credentials in datenbank/.env
+create the enviroment variables in frontend backend and database.
 ```
 
 ### 3. Start Database Services
